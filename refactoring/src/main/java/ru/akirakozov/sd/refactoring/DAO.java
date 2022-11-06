@@ -45,6 +45,26 @@ public class DAO {
         }
     }
 
+    public void createTable() throws SQLException {
+        execute("CREATE TABLE IF NOT EXISTS PRODUCT" +
+                "(ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
+                " NAME           TEXT    NOT NULL, " +
+                " PRICE          INT     NOT NULL)");
+    }
+
+    public void addProduct(Product product) throws SQLException {
+        execute("INSERT INTO PRODUCT " +
+                "(NAME, PRICE) VALUES (\"" + product.getName() + "\"," + product.getPrice() + ")");
+    }
+
+    private void execute(String sql) throws SQLException {
+        try (Connection c = DriverManager.getConnection("jdbc:sqlite:test.db")) {
+            try (Statement stmt = c.createStatement()) {
+                stmt.executeUpdate(sql);
+            }
+        }
+    }
+
     private Product resultSetToProduct(ResultSet rs) throws SQLException {
         String name = rs.getString("name");
         int price = rs.getInt("price");

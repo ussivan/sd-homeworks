@@ -16,27 +16,15 @@ import java.sql.Statement;
  * @author akirakozov
  */
 public class Main {
+
     public static void main(String[] args) throws Exception {
-        createTable();
+        DAO dao = new DAO();
+        dao.createTable();
         Server server = configureServer();
 
         server.start();
         server.join();
     }
-
-    private static void createTable() throws SQLException {
-        try (Connection c = DriverManager.getConnection("jdbc:sqlite:test.db")) {
-            String sql = "CREATE TABLE IF NOT EXISTS PRODUCT" +
-                    "(ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
-                    " NAME           TEXT    NOT NULL, " +
-                    " PRICE          INT     NOT NULL)";
-            Statement stmt = c.createStatement();
-
-            stmt.executeUpdate(sql);
-            stmt.close();
-        }
-    }
-
     private static Server configureServer() {
         Server server = new Server(8081);
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
