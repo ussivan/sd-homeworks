@@ -4,10 +4,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
 
 /**
  * @author akirakozov
@@ -36,95 +32,23 @@ public class QueryServlet extends HttpServlet {
 
 
     private void maxCommand(HttpServletResponse response) {
-        try {
-            try (Connection c = DriverManager.getConnection("jdbc:sqlite:test.db")) {
-                Statement stmt = c.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT * FROM PRODUCT ORDER BY PRICE DESC LIMIT 1");
-                response.getWriter().println("<html><body>");
-                response.getWriter().println("<h1>Product with max price: </h1>");
-
-                while (rs.next()) {
-                    String  name = rs.getString("name");
-                    int price  = rs.getInt("price");
-                    response.getWriter().println(name + "\t" + price + "</br>");
-                }
-                response.getWriter().println("</body></html>");
-
-                rs.close();
-                stmt.close();
-            }
-
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        Utils.query("SELECT * FROM PRODUCT ORDER BY PRICE DESC LIMIT 1", response,
+                "<h1>Product with max price: </h1>", Utils.QueryType.GET_ITEMS);
     }
 
     private void minCommand(HttpServletResponse response) {
-        try {
-            try (Connection c = DriverManager.getConnection("jdbc:sqlite:test.db")) {
-                Statement stmt = c.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT * FROM PRODUCT ORDER BY PRICE LIMIT 1");
-                response.getWriter().println("<html><body>");
-                response.getWriter().println("<h1>Product with min price: </h1>");
-
-                while (rs.next()) {
-                    String  name = rs.getString("name");
-                    int price  = rs.getInt("price");
-                    response.getWriter().println(name + "\t" + price + "</br>");
-                }
-                response.getWriter().println("</body></html>");
-
-                rs.close();
-                stmt.close();
-            }
-
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        Utils.query("SELECT * FROM PRODUCT ORDER BY PRICE LIMIT 1", response,
+                "<h1>Product with min price: </h1>", Utils.QueryType.GET_ITEMS);
     }
 
     private void countCommand(HttpServletResponse response) {
-        try {
-            try (Connection c = DriverManager.getConnection("jdbc:sqlite:test.db")) {
-                Statement stmt = c.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM PRODUCT");
-                response.getWriter().println("<html><body>");
-                response.getWriter().println("Number of products: ");
-
-                if (rs.next()) {
-                    response.getWriter().println(rs.getInt(1));
-                }
-                response.getWriter().println("</body></html>");
-
-                rs.close();
-                stmt.close();
-            }
-
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        Utils.query("SELECT COUNT(*) FROM PRODUCT", response,
+                "Number of products: ", Utils.QueryType.COUNT_FUNCTION);
     }
 
     private void sumCommand(HttpServletResponse response) {
-        try {
-            try (Connection c = DriverManager.getConnection("jdbc:sqlite:test.db")) {
-                Statement stmt = c.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT SUM(price) FROM PRODUCT");
-                response.getWriter().println("<html><body>");
-                response.getWriter().println("Summary price: ");
-
-                if (rs.next()) {
-                    response.getWriter().println(rs.getInt(1));
-                }
-                response.getWriter().println("</body></html>");
-
-                rs.close();
-                stmt.close();
-            }
-
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        Utils.query("SELECT SUM(price) FROM PRODUCT", response,
+                "Summary price: ", Utils.QueryType.COUNT_FUNCTION);
     }
 
     private void unknownCommand(HttpServletResponse response, String command) throws IOException {
