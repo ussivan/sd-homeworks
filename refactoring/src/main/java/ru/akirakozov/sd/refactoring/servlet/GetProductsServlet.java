@@ -12,7 +12,7 @@ public class GetProductsServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        Utils.query("SELECT * FROM PRODUCT", response, "", Utils.QueryType.GET_ITEMS);
+        Utils.query(response, "", Utils.QueryType.GET_ITEMS);
 
         response.setContentType("text/html");
         response.setStatus(HttpServletResponse.SC_OK);

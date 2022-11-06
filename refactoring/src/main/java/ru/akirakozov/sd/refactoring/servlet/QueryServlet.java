@@ -32,23 +32,23 @@ public class QueryServlet extends HttpServlet {
 
 
     private void maxCommand(HttpServletResponse response) {
-        Utils.query("SELECT * FROM PRODUCT ORDER BY PRICE DESC LIMIT 1", response,
-                "<h1>Product with max price: </h1>", Utils.QueryType.GET_ITEMS);
+        Utils.query(response,
+                "<h1>Product with max price: </h1>", Utils.QueryType.MAX_PROD);
     }
 
     private void minCommand(HttpServletResponse response) {
-        Utils.query("SELECT * FROM PRODUCT ORDER BY PRICE LIMIT 1", response,
-                "<h1>Product with min price: </h1>", Utils.QueryType.GET_ITEMS);
+        Utils.query(response,
+                "<h1>Product with min price: </h1>", Utils.QueryType.MIN_PROD);
     }
 
     private void countCommand(HttpServletResponse response) {
-        Utils.query("SELECT COUNT(*) FROM PRODUCT", response,
-                "Number of products: ", Utils.QueryType.COUNT_FUNCTION);
+        Utils.query(response,
+                "Number of products: ", Utils.QueryType.COUNT);
     }
 
     private void sumCommand(HttpServletResponse response) {
-        Utils.query("SELECT SUM(price) FROM PRODUCT", response,
-                "Summary price: ", Utils.QueryType.COUNT_FUNCTION);
+        Utils.query(response,
+                "Summary price: ", Utils.QueryType.SUM);
     }
 
     private void unknownCommand(HttpServletResponse response, String command) throws IOException {

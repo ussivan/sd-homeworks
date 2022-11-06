@@ -1,50 +1,71 @@
 package ru.akirakozov.sd.refactoring.servlet;
 
+import ru.akirakozov.sd.refactoring.DAO;
+import ru.akirakozov.sd.refactoring.Product;
+
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 public class Utils {
 
     public enum QueryType {
-        GET_ITEMS, COUNT_FUNCTION
+        MIN_PROD, MAX_PROD, GET_ITEMS, SUM, COUNT
     }
 
-    public static void query(String sql, HttpServletResponse response, String responseBody, QueryType action) {
+
+    public static void query(HttpServletResponse response, String responseBody, QueryType action) {
+        DAO dao = new DAO();
         try {
-            try (Connection c = DriverManager.getConnection("jdbc:sqlite:test.db")) {
-                Statement stmt = c.createStatement();
-                ResultSet rs = stmt.executeQuery(sql);
-                response.getWriter().println("<html><body>");
-                if (!responseBody.isEmpty()) {
-                    response.getWriter().println(responseBody);
-                }
-
-                while (rs.next()) {
-                    if (action == QueryType.GET_ITEMS) {
-                        displayItemsInfo(rs, response);
-                    } else if (action == QueryType.COUNT_FUNCTION) {
-                        displayFunctionResult(rs, response);
-                    }
-                }
-                response.getWriter().println("</body></html>");
-
-                rs.close();
-                stmt.close();
+            response.getWriter().println("<html><body>");
+            if (!responseBody.isEmpty()) {
+                response.getWriter().println(responseBody);
             }
 
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+            if (action == QueryType.GET_ITEMS) {
+                for (Product p: dao.getProducts()) {
+                    response.getWriter().println(p.getName() + "\t" + p.getPrice() + "</br>");
+                }
+            } else if (action == QueryType.MIN_PROD) {
+                Optional<Product> optional = dao.getMinProduct();
+                if (optional.isPresent()) {
+                    Product p = optional.get();
+                    response.getWriter().println(p.getName() + "\t" + p.getPrice() + "</br>");
+                }
+            } else if (action == QueryType.MAX_PROD) {
+                Optional<Product> optional = dao.getMaxProduct();
+                if (optional.isPresent()) {
+                    Product p = optional.get();
+                    response.getWriter().println(p.getName() + "\t" + p.getPrice() + "</br>");
+                }
+            } else if (action == QueryType.COUNT) {
+                Optional<Integer> result = dao.getProductCount();
+                if (result.isPresent()) {
+                    response.getWriter().println(result.get());
+                }
+            } else {
+                Optional<Integer> result = dao.getProductPriceSum();
+                if (result.isPresent()) {
+                    response.getWriter().println(result.get());
+                }
+            }
+            response.getWriter().println("</body></html>");
+        } catch (SQLException | IOException ex) {
+            throw new RuntimeException(ex);
         }
     }
 
-    static void displayFunctionResult(ResultSet rs, HttpServletResponse response) throws IOException, SQLException {
-        response.getWriter().println(rs.getInt(1));
+
+    static int displayFunctionResult(ResultSet rs, HttpServletResponse response) throws IOException, SQLException {
+        return rs.getInt(1);
     }
 
-    static void displayItemsInfo(ResultSet rs, HttpServletResponse response) throws SQLException, IOException {
+    static Product displayItemsInfo(ResultSet rs, HttpServletResponse response) throws SQLException, IOException {
         String name = rs.getString("name");
         int price = rs.getInt("price");
-        response.getWriter().println(name + "\t" + price + "</br>");
+        return new Product(name, price);
     }
 }
