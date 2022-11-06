@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="813fe059-87ce-4ccf-a0a4-f3cb77f4888c" name="Changes" comment="create GetProductsServletTest">
-      <change afterPath="$PROJECT_DIR$/refactoring/src/test/java/ru/akirakozov/sd/refactoring/servlet/QueryServletTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/refactoring/src/test/java/ru/akirakozov/sd/refactoring/TestingUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/refactoring/src/test/java/ru/akirakozov/sd/refactoring/TestingUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/refactoring/src/test/java/ru/akirakozov/sd/refactoring/servlet/GetProductsServletTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/refactoring/src/test/java/ru/akirakozov/sd/refactoring/servlet/GetProductsServletTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="813fe059-87ce-4ccf-a0a4-f3cb77f4888c" name="Changes" comment="create QueryServletTest" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -190,7 +185,7 @@
       <workItem from="1667242520534" duration="1207000" />
       <workItem from="1667252740939" duration="4774000" />
       <workItem from="1667651063959" duration="2194000" />
-      <workItem from="1667735047872" duration="5707000" />
+      <workItem from="1667735047872" duration="6030000" />
     </task>
     <task id="LOCAL-00001" summary="HW 1 + HW 2 init">
       <created>1667735926472</created>
@@ -220,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667740184471</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="create QueryServletTest">
+      <created>1667741045537</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1667741045537</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +244,7 @@
     <MESSAGE value="Add testing libs" />
     <MESSAGE value="create AddProductServletTest" />
     <MESSAGE value="create GetProductsServletTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="create GetProductsServletTest" />
+    <MESSAGE value="create QueryServletTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="create QueryServletTest" />
   </component>
 </project>
