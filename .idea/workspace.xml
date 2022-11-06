@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="813fe059-87ce-4ccf-a0a4-f3cb77f4888c" name="Changes" comment="create AddProductServletTest">
-      <change afterPath="$PROJECT_DIR$/refactoring/src/test/java/ru/akirakozov/sd/refactoring/servlet/GetProductsServletTest.java" afterDir="false" />
+    <list default="true" id="813fe059-87ce-4ccf-a0a4-f3cb77f4888c" name="Changes" comment="create GetProductsServletTest">
+      <change afterPath="$PROJECT_DIR$/refactoring/src/test/java/ru/akirakozov/sd/refactoring/servlet/QueryServletTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/refactoring/src/test/java/ru/akirakozov/sd/refactoring/TestingUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/refactoring/src/test/java/ru/akirakozov/sd/refactoring/TestingUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/refactoring/src/test/java/ru/akirakozov/sd/refactoring/servlet/GetProductsServletTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/refactoring/src/test/java/ru/akirakozov/sd/refactoring/servlet/GetProductsServletTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,20 +80,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GetProductsServletTest">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.akirakozov.sd.refactoring.Main" />
-      <module name="refactoring" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.akirakozov.sd.refactoring.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.QueryServletTest">
     <configuration name="AddProductServletTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="refactoring" />
       <extension name="coverage">
@@ -139,11 +127,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LRUCacheTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sd-homeworks" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LRUCacheTest" />
+    <configuration name="QueryServletTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="refactoring" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.akirakozov.sd.refactoring.servlet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.akirakozov.sd.refactoring.servlet" />
+      <option name="MAIN_CLASS_NAME" value="ru.akirakozov.sd.refactoring.servlet.QueryServletTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QueryServletTest.testCountProducts" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="refactoring" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.akirakozov.sd.refactoring.servlet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.akirakozov.sd.refactoring.servlet" />
+      <option name="MAIN_CLASS_NAME" value="ru.akirakozov.sd.refactoring.servlet.QueryServletTest" />
+      <option name="METHOD_NAME" value="testCountProducts" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -161,11 +171,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.QueryServletTest" />
+        <item itemvalue="JUnit.QueryServletTest.testCountProducts" />
         <item itemvalue="JUnit.GetProductsServletTest" />
         <item itemvalue="JUnit.GetProductsServletTest.testEmptyResponse" />
         <item itemvalue="JUnit.AddProductServletTest" />
-        <item itemvalue="JUnit.LRUCacheTest" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -180,7 +190,7 @@
       <workItem from="1667242520534" duration="1207000" />
       <workItem from="1667252740939" duration="4774000" />
       <workItem from="1667651063959" duration="2194000" />
-      <workItem from="1667735047872" duration="5062000" />
+      <workItem from="1667735047872" duration="5707000" />
     </task>
     <task id="LOCAL-00001" summary="HW 1 + HW 2 init">
       <created>1667735926472</created>
@@ -203,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667738650227</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="create GetProductsServletTest">
+      <created>1667740184471</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667740184471</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,6 +241,7 @@
     <MESSAGE value="HW 1 + HW 2 init" />
     <MESSAGE value="Add testing libs" />
     <MESSAGE value="create AddProductServletTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="create AddProductServletTest" />
+    <MESSAGE value="create GetProductsServletTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="create GetProductsServletTest" />
   </component>
 </project>

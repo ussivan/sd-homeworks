@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class TestingUtils {
     private static final String DB_URL = "jdbc:sqlite:test.db";
@@ -36,6 +38,20 @@ public class TestingUtils {
             try (Statement s = c.createStatement()) {
                 s.executeUpdate(sql);
             }
+        }
+    }
+
+    public static final Map<String, Integer> SAMPLE_DATA = new LinkedHashMap<>();
+
+    static {
+        SAMPLE_DATA.put("min", 10);
+        SAMPLE_DATA.put("mid", 25);
+        SAMPLE_DATA.put("max", 50);
+    }
+
+    public static void addSampleData() throws SQLException {
+        for (Map.Entry<String, Integer> entry : SAMPLE_DATA.entrySet()) {
+            addProduct(entry.getKey(), entry.getValue());
         }
     }
 
