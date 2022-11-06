@@ -1,29 +1,40 @@
 package ru.akirakozov.sd.refactoring.servlet;
 
+import ru.akirakozov.sd.refactoring.DAO;
+import ru.akirakozov.sd.refactoring.Product;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.rmi.RemoteException;
+import java.sql.SQLException;
+import java.util.Optional;
 
 /**
  * @author akirakozov
  */
 public class QueryServlet extends HttpServlet {
-
+    private final DAO dao = new DAO();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String command = request.getParameter("command");
-
-        if ("max".equals(command)) {
-            maxCommand(response);
-        } else if ("min".equals(command)) {
-            minCommand(response);
-        } else if ("sum".equals(command)) {
-            sumCommand(response);
-        } else if ("count".equals(command)) {
-            countCommand(response);
-        } else {
-            unknownCommand(response, command);
+        try {
+            String res;
+            if ("max".equals(command)) {
+                res = maxCommand();
+            } else if ("min".equals(command)) {
+                res = minCommand();
+            } else if ("sum".equals(command)) {
+                res = sumCommand();
+            } else if ("count".equals(command)) {
+                res = countCommand();
+            } else {
+                res = unknownCommand(command);
+            }
+            response.getWriter().println(res);
+        } catch (SQLException e) {
+            throw new RuntimeException();
         }
 
         response.setContentType("text/html");
@@ -31,28 +42,26 @@ public class QueryServlet extends HttpServlet {
     }
 
 
-    private void maxCommand(HttpServletResponse response) {
-        Utils.query(response,
-                "<h1>Product with max price: </h1>", Utils.QueryType.MAX_PROD);
+    private String maxCommand() throws SQLException {
+        Optional<Product> optional = dao.getMaxProduct();
+        return HTMLUtils.query("<h1>Product with max price: </h1>", HTMLUtils.productToHTML(optional.orElse(null)));
     }
 
-    private void minCommand(HttpServletResponse response) {
-        Utils.query(response,
-                "<h1>Product with min price: </h1>", Utils.QueryType.MIN_PROD);
+    private String minCommand() throws SQLException {
+        Optional<Product> optional = dao.getMinProduct();
+        return HTMLUtils.query("<h1>Product with min price: </h1>", HTMLUtils.productToHTML(optional.orElse(null)));
     }
 
-    private void countCommand(HttpServletResponse response) {
-        Utils.query(response,
-                "Number of products: ", Utils.QueryType.COUNT);
+    private String countCommand() throws SQLException {
+        return HTMLUtils.query("Number of products: ", HTMLUtils.valueToHTML(dao.getProductCount().orElse(null)));
     }
 
-    private void sumCommand(HttpServletResponse response) {
-        Utils.query(response,
-                "Summary price: ", Utils.QueryType.SUM);
+    private String sumCommand() throws SQLException {
+        return HTMLUtils.query("Summary price: ", HTMLUtils.valueToHTML(dao.getProductPriceSum().orElse(null)));
     }
 
-    private void unknownCommand(HttpServletResponse response, String command) throws IOException {
-        response.getWriter().println("Unknown command: " + command);
+    private String unknownCommand(String command) {
+        return "Unknown command: " + command;
     }
 
 
