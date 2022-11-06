@@ -4,29 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="813fe059-87ce-4ccf-a0a4-f3cb77f4888c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw1/LRUCacheTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw1/LruCache.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw1/LruCacheImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw1/N.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/refactoring/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/refactoring/refactoring.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/refactoring/src/main/java/ru/akirakozov/sd/refactoring/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/refactoring/src/main/java/ru/akirakozov/sd/refactoring/servlet/AddProductServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/refactoring/src/main/java/ru/akirakozov/sd/refactoring/servlet/GetProductsServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/refactoring/src/main/java/ru/akirakozov/sd/refactoring/servlet/QueryServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sd-homeworks.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="813fe059-87ce-4ccf-a0a4-f3cb77f4888c" name="Changes" comment="HW 1 + HW 2 init">
+      <change afterPath="$PROJECT_DIR$/refactoring/src/test/java/ru/akirakozov/sd/refactoring/servlet/QueryServletTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw1/kal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw2/gucci" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw3/klim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/refactoring/refactoring.iml" beforeDir="false" afterPath="$PROJECT_DIR$/refactoring/refactoring.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,29 +39,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/iuss/sd-homeworks/refactoring&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "jdk.selected.JAVA_MODULE": "11",
+    "last_opened_file_path": "C:/Users/iuss/sd-homeworks/refactoring/src/test",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\iuss\sd-homeworks\refactoring\src\test" />
       <recent name="C:\Users\iuss\sd-homeworks\refactoring" />
       <recent name="C:\Users\iuss\sd-homeworks\h3" />
     </key>
@@ -88,6 +74,7 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="ru.akirakozov.sd.refactoring.servlet" />
       <recent name="" />
     </key>
   </component>
@@ -154,8 +141,16 @@
       <workItem from="1667242520534" duration="1207000" />
       <workItem from="1667252740939" duration="4774000" />
       <workItem from="1667651063959" duration="2194000" />
-      <workItem from="1667735047872" duration="749000" />
+      <workItem from="1667735047872" duration="1708000" />
     </task>
+    <task id="LOCAL-00001" summary="HW 1 + HW 2 init">
+      <created>1667735926472</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667735926472</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,5 +166,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="HW 1 + HW 2 init" />
+    <option name="LAST_COMMIT_MESSAGE" value="HW 1 + HW 2 init" />
   </component>
 </project>
