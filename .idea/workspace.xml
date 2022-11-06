@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="813fe059-87ce-4ccf-a0a4-f3cb77f4888c" name="Changes" comment="Add testing libs">
-      <change afterPath="$PROJECT_DIR$/refactoring/src/test/java/ru/akirakozov/sd/refactoring/TestingUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/refactoring/src/test/java/ru/akirakozov/sd/refactoring/servlet/AddProductServletTest.java" afterDir="false" />
+    <list default="true" id="813fe059-87ce-4ccf-a0a4-f3cb77f4888c" name="Changes" comment="create AddProductServletTest">
+      <change afterPath="$PROJECT_DIR$/refactoring/src/test/java/ru/akirakozov/sd/refactoring/servlet/GetProductsServletTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/refactoring/src/test/java/ru/akirakozov/sd/refactoring/TestingUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/refactoring/src/test/java/ru/akirakozov/sd/refactoring/TestingUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +18,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Class" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -79,7 +79,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AddProductServletTest">
+  <component name="RunManager" selected="JUnit.GetProductsServletTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.akirakozov.sd.refactoring.Main" />
       <module name="refactoring" />
@@ -108,21 +108,42 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LRUCacheTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sd-homeworks" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LRUCacheTest" />
+    <configuration name="GetProductsServletTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="refactoring" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.akirakozov.sd.refactoring.servlet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.akirakozov.sd.refactoring.servlet" />
+      <option name="MAIN_CLASS_NAME" value="ru.akirakozov.sd.refactoring.servlet.GetProductsServletTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LRUCacheTest.testEmptyCache" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GetProductsServletTest.testEmptyResponse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="refactoring" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.akirakozov.sd.refactoring.servlet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.akirakozov.sd.refactoring.servlet" />
+      <option name="MAIN_CLASS_NAME" value="ru.akirakozov.sd.refactoring.servlet.GetProductsServletTest" />
+      <option name="METHOD_NAME" value="testEmptyResponse" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LRUCacheTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sd-homeworks" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="LRUCacheTest" />
-      <option name="METHOD_NAME" value="testEmptyCache" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -140,10 +161,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GetProductsServletTest" />
+        <item itemvalue="JUnit.GetProductsServletTest.testEmptyResponse" />
         <item itemvalue="JUnit.AddProductServletTest" />
         <item itemvalue="JUnit.LRUCacheTest" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.LRUCacheTest.testEmptyCache" />
       </list>
     </recent_temporary>
   </component>
@@ -158,7 +180,7 @@
       <workItem from="1667242520534" duration="1207000" />
       <workItem from="1667252740939" duration="4774000" />
       <workItem from="1667651063959" duration="2194000" />
-      <workItem from="1667735047872" duration="3366000" />
+      <workItem from="1667735047872" duration="5062000" />
     </task>
     <task id="LOCAL-00001" summary="HW 1 + HW 2 init">
       <created>1667735926472</created>
@@ -174,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667737079181</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="create AddProductServletTest">
+      <created>1667738650227</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667738650227</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,6 +223,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="HW 1 + HW 2 init" />
     <MESSAGE value="Add testing libs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add testing libs" />
+    <MESSAGE value="create AddProductServletTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="create AddProductServletTest" />
   </component>
 </project>

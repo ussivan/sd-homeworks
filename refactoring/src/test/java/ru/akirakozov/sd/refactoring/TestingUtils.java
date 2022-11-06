@@ -18,6 +18,18 @@ public class TestingUtils {
     public static Connection connect() throws SQLException {
         return DriverManager.getConnection(DB_URL);
     }
+    public static void init() throws SQLException {
+        exec(INIT_SQL);
+    }
+
+    public static void clearProducts() throws SQLException {
+        exec(CLEAR_SQL);
+    }
+
+    public static void addProduct(String name, int value) throws SQLException {
+        exec("INSERT INTO PRODUCT " +
+                "(NAME, PRICE) VALUES (\"" + name + "\"," + value + ")");
+    }
 
     private static void exec(String sql) throws SQLException {
         try (Connection c = connect()) {
@@ -27,11 +39,4 @@ public class TestingUtils {
         }
     }
 
-    public static void init() throws SQLException {
-        exec(INIT_SQL);
-    }
-
-    public static void clearProducts() throws SQLException {
-        exec(CLEAR_SQL);
-    }
 }
