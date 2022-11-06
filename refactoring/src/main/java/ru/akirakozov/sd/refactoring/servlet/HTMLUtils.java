@@ -7,10 +7,6 @@ import java.util.List;
 
 public class HTMLUtils {
 
-    public enum QueryType {
-        MIN_PROD, MAX_PROD, GET_ITEMS, SUM, COUNT
-    }
-
     public static String productToHTML(Product p) {
         if (p == null) {
             return "";
