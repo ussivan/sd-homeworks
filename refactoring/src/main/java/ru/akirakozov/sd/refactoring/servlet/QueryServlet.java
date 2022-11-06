@@ -1,6 +1,7 @@
 package ru.akirakozov.sd.refactoring.servlet;
 
 import ru.akirakozov.sd.refactoring.DAO;
+import ru.akirakozov.sd.refactoring.HTMLUtils;
 import ru.akirakozov.sd.refactoring.Product;
 
 import javax.servlet.http.HttpServlet;

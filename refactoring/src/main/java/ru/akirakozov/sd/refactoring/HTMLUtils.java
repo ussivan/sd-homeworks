@@ -1,6 +1,5 @@
-package ru.akirakozov.sd.refactoring.servlet;
+package ru.akirakozov.sd.refactoring;
 
-import ru.akirakozov.sd.refactoring.Product;
 
 import java.sql.*;
 import java.util.List;
