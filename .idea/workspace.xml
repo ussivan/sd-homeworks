@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="813fe059-87ce-4ccf-a0a4-f3cb77f4888c" name="Changes" comment="HW 1 + HW 2 init">
-      <change afterPath="$PROJECT_DIR$/refactoring/src/test/java/ru/akirakozov/sd/refactoring/servlet/QueryServletTest.java" afterDir="false" />
+    <list default="true" id="813fe059-87ce-4ccf-a0a4-f3cb77f4888c" name="Changes" comment="Add testing libs">
+      <change afterPath="$PROJECT_DIR$/refactoring/src/test/java/ru/akirakozov/sd/refactoring/TestingUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/refactoring/src/test/java/ru/akirakozov/sd/refactoring/servlet/AddProductServletTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/refactoring/refactoring.iml" beforeDir="false" afterPath="$PROJECT_DIR$/refactoring/refactoring.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +19,7 @@
       <list>
         <option value="Kotlin Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -47,12 +48,12 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "create.test.in.the.same.root": "true",
     "jdk.selected.JAVA_MODULE": "11",
+    "last_directory_selection": "C:/Users/iuss/sd-homeworks/refactoring/src/test/java/ru/akirakozov/sd/refactoring",
     "last_opened_file_path": "C:/Users/iuss/sd-homeworks/refactoring/src/test",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -78,7 +79,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LRUCacheTest">
+  <component name="RunManager" selected="JUnit.AddProductServletTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.akirakozov.sd.refactoring.Main" />
       <module name="refactoring" />
@@ -88,6 +89,21 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AddProductServletTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="refactoring" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.akirakozov.sd.refactoring.servlet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.akirakozov.sd.refactoring.servlet" />
+      <option name="MAIN_CLASS_NAME" value="ru.akirakozov.sd.refactoring.servlet.AddProductServletTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -124,6 +140,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AddProductServletTest" />
         <item itemvalue="JUnit.LRUCacheTest" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.LRUCacheTest.testEmptyCache" />
@@ -141,7 +158,7 @@
       <workItem from="1667242520534" duration="1207000" />
       <workItem from="1667252740939" duration="4774000" />
       <workItem from="1667651063959" duration="2194000" />
-      <workItem from="1667735047872" duration="1708000" />
+      <workItem from="1667735047872" duration="3366000" />
     </task>
     <task id="LOCAL-00001" summary="HW 1 + HW 2 init">
       <created>1667735926472</created>
@@ -150,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667735926472</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add testing libs">
+      <created>1667737079181</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667737079181</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +193,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="HW 1 + HW 2 init" />
-    <option name="LAST_COMMIT_MESSAGE" value="HW 1 + HW 2 init" />
+    <MESSAGE value="Add testing libs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add testing libs" />
   </component>
 </project>
