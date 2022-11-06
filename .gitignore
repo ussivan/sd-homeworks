@@ -2,3 +2,4 @@
 /refactoring/test.db
 /out
 /refactoring/target
+*.iml
