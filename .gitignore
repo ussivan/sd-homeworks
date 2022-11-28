@@ -3,3 +3,5 @@
 /out
 /refactoring/target
 *.iml
+api/vk_access_token
+vk_access_token

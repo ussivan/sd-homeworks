@@ -1,0 +1,58 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+    <title>Task list</title>
+</head>
+<body>
+
+<form th:object="${taskList}" method="POST" action="/add-task-list">
+    <label>
+        New list title:
+        <input type="text" th:field="*{name}"/>
+    </label>
+    <input type="submit" value="Add">
+</form>
+
+<div th:unless="${#lists.isEmpty(taskLists)}">
+    <form th:object="${task}" method="POST" action="/add-task">
+        <label>
+            New task title:
+            <input type="text" th:field="*{name}"/>
+        </label>
+        <input type="submit" value="Add">
+        <br>
+        <label>
+            List:
+            <select th:field="*{list}" class="form-control">
+                <option th:each="taskList: ${taskLists}" th:value="${taskList.id}"
+                        th:text="${taskList.name}"></option>
+            </select>
+        </label>
+    </form>
+</div>
+
+<div th:each="taskList : ${taskLists}" style="display: inline-block;">
+    <h1 th:text="${taskList.getName()}" style="margin-bottom: 0;"></h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="task : ${taskList.getTasks()}">
+            <td th:text="${task.getName()}"></td>
+            <td th:text='${task.getDone() ? "Done" : "Not finished"}'></td>
+            <td>
+                <a th:href="@{toggle-task(id=${task.id})}">Switch</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a th:href="@{delete-task-list(id=${taskList.id})}">x</a>
+
+</div>
+</body>
+</html>
